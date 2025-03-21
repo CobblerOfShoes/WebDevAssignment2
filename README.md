@@ -1,30 +1,30 @@
 Setup instructions:
 
 All node modules are downloaded in this folder, so you can run with `npm start`
-  > Make sure that port 3000 is open, or change the port
+  * Make sure that port 3000 is open, or change the port
 
 The app structure is as follows:
-  > `/` - The landing page, just says 'home' (GET)
-  > `/api/auth/register` - The registration link (POST)
+  * `/` - The landing page, just says 'home' (GET)
+  * `/api/auth/register` - The registration link (POST)
         Required JSON fields: name, email, password
-  > `/api/auth/login` - The login link (POST)
+  * `/api/auth/login` - The login link (POST)
         Required JSON fields: email, password
-  > `/api/users/` - Displays all users (GET) -- this is only for testing purposes, insecure as it shows passwords
-  > `/api/posts/` - Displays all posts (GET)
-  > `/api/posts/` - Create a post (POST)
+  * `/api/users/` - Displays all users (GET) -- this is only for testing purposes, insecure as it shows passwords
+  * `/api/posts/` - Displays all posts (GET)
+  * `/api/posts/` - Create a post (POST)
         Required JSON fields: title, description
-  > `/api/posts/` - Displays all posts (GET)
-  > `/api/posts/:id` - View a specific post (GET)
-  > `/api/posts/:id` - Update a post (PUT)
+  * `/api/posts/` - Displays all posts (GET)
+  * `/api/posts/:id` - View a specific post (GET)
+  * `/api/posts/:id` - Update a post (PUT)
         Optional JSON fields: title, description
-  > `/api/posts/:id` - Delete a post (DELETE)
-  > `/api/posts/:id/like` - Like a post (POST)
+  * `/api/posts/:id` - Delete a post (DELETE)
+  * `/api/posts/:id/like` - Like a post (POST)
         No JSON fields required
 
 I used a REST Client extension for VS Code instead of Postman in the browser.
-  > The http requests are all contained in `requests.http`
-  > This way, you can see all the requests I created.
-  > The screenshots of my output are in the `screenshots` folder
+  * The http requests are all contained in `requests.http`
+  * This way, you can see all the requests I created.
+  * The screenshots of my output are in the `screenshots` folder
 
 Questions:
 
