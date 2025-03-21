@@ -1,0 +1,90 @@
+### Assignment: Build a Social Network Backend – "Piazza"
+
+#### General instructions:
+
+- This assignment accounts for 15% of your final grade.
+- You are encouraged to improvise, extend, or adapt the data schemas to enhance your solution.
+- Documentation: Include a README file with:
+  - A brief description of your API endpoints.
+  - Test results demonstrating your code’s functionality (e.g., screenshots).
+- Do not upload your MongoDB key to GitHub. Use a `.gitignore` file or remove it manually before committing your code.
+- Reuse and extend the tutorial code as necessary.
+- No references are required for this assignment.
+
+#### Objective:
+
+In this assignment, you will develop the backend of a social network app called Piazza using Node.js and MongoDB. The application will allow users to register, log in, and create posts about their personal interests. Other users can browse these posts, but only logged-in users can create new posts.
+
+#### Requirements:
+
+1. Set Up the Project
+   - Initialize a Node.js project (`package.json`) and install necessary dependencies.
+   - Use Express.js for the backend framework.
+   - Use MongoDB as the database (Mongoose for schema modeling).
+2. User Authentication System
+   - Create a `User` model with the following fields:
+     - `name` (string, required)
+     - `email` (string, required, unique, properly formatted)
+     - `password` (string, required, encrypted before saving)
+   - Implement user registration (`POST /register`).
+   - Implement user login (`POST /login`).
+   - Use JWT (JSON Web Token) for authentication.
+   - Users must log in before making a post.
+3. Post Management (CRUD)
+   - Create a `Post` model with the following fields:
+     - `title` (string, required, max length 100)
+     - `description` (string, required, max length 500)
+     - `likes` (number, default is 0)
+     - `createdBy` (reference to the User model, required)
+   - Implement the following routes:
+     - Create a post (`POST /posts`) – Requires authentication.
+     - Get all posts (`GET /posts`) – Publicly available.
+     - Get a single post by ID (`GET /posts/:id`) – Publicly available.
+     - Update a post (`PUT /posts/:id`) – Only the post creator can update.
+     - Delete a post (`DELETE /posts/:id`) – Only the post creator can delete.
+4. Input Validations & Security
+   - Apply basic input validation using middleware (e.g., email format, password strength, required fields).
+   - Ensure passwords are encrypted using bcrypt before storing in the database.
+   - Protect routes that require authentication using JWT middleware.
+5. Testing with Postman
+   - Use Postman to test all API endpoints.
+   - Provide screenshots of the API requests and responses.
+   - Ensure proper error handling and return meaningful responses.
+
+#### Deliverables:
+
+- A GitHub repository containing your project code.
+- A README.md with setup instructions and API documentation.
+- Postman screenshots showing successful API calls for:
+  - User registration & login
+  - Creating a post
+  - Fetching all posts
+  - Updating and deleting a post (by the post creator)
+
+#### Bonus (optional and not-graded):
+
+- Add a like post feature (`POST /posts/:id/like`) to increment the likes counter.
+- Implement a basic rate limiter to prevent spam requests.
+- Add a timestamp (`createdAt`) to each post.
+
+### Grading Criteria:
+
+| Criteria                                              | Points |
+| ----------------------------------------------------- | ------ |
+| Project setup & structure                             | 10     |
+| User authentication (registration & login)            | 20     |
+| CRUD operations for posts                             | 30     |
+| Input validation & security (bcrypt, JWT, middleware) | 20     |
+| API testing using Postman                             | 10     |
+| Code readability & documentation (README)             | 10     |
+| Total                                                 | 100    |
+
+------
+
+### Instructions for Submission:
+
+- Upload your project to GitHub and submit the repository link.
+- Include README.md with instructions on how to run the project.
+- Submit Postman test screenshots as proof of functionality.
+
+Good luck, and happy coding! 🚀
